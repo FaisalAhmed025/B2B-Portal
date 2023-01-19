@@ -8,9 +8,11 @@ import { AgentFailedModule } from './agent_failed/agent_failed.module';
 import { AgentFailed } from './agent_failed/entities/agent_failed.entity';
 import { AgentLedgerModule } from './agent_ledger/agent_ledger.module';
 import { AgentLedger } from './agent_ledger/entities/agent_ledger.entity';
+import { AirlinesModule } from './airlines/airlines.module';
+import { Airlines } from './airlines/entities/airline.entity';
 
 @Module({
-  imports: [AgentModule, AgentFailedModule, AgentLedgerModule,
+  imports: [AgentModule, AgentFailedModule, AgentLedgerModule, AirlinesModule, 
     TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
@@ -18,8 +20,9 @@ import { AgentLedger } from './agent_ledger/entities/agent_ledger.entity';
     username: 'root',
     password: '',
     database: 'b2b',
-    entities: [Agent,AgentFailed, AgentLedger],
-  }), 
+    entities: [Agent,AgentFailed, AgentLedger, Airlines],
+  }),
+   
   
   ],
   controllers: [AppController],
