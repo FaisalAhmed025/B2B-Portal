@@ -6,7 +6,7 @@ async function start() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('B2B')
+    .setTitle('B2B PORTAL')
     .setDescription('The Agent Api Description')
     .setVersion('1.0')
     .addTag('Agent')

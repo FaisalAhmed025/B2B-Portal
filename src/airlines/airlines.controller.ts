@@ -7,12 +7,12 @@ import { UpdateAirlineDto } from './dto/update-airline.dto';
 export class AirlinesController {
   constructor(private readonly airlinesService: AirlinesService) {}
 
-  @Post()
+  @Post('create')
   create(@Body() createAirlineDto: CreateAirlineDto) {
     return this.airlinesService.create(createAirlineDto);
   }
 
-  @Get()
+  @Get('getallairlines')
   findAll() {
     return this.airlinesService.findAll();
   }

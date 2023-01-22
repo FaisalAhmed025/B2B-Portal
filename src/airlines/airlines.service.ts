@@ -18,24 +18,24 @@ export class AirlinesService {
     return this.AirlineRepo.find({});
   }
 
-  findOne(id: number) {
-    return this.AirlineRepo.findOneBy({id});
+  findOne(Id: number) {
+    return this.AirlineRepo.findOneBy({Id});
   }
 
   async update(id: number, updateAirlineDto: UpdateAirlineDto) {
     const airline = await this.findOne(id);
 
 
-    airline.name = updateAirlineDto.name
-    airline.nameBangla =updateAirlineDto.name
-    airline.code = updateAirlineDto.code
-    airline.commission =updateAirlineDto.commission
+    airline.Name = updateAirlineDto.Name
+    airline.NameBangla =updateAirlineDto.Name
+    airline.Code = updateAirlineDto.Code
+    airline.Commission =updateAirlineDto.Commission
 
     const updateairline = await this.AirlineRepo.save(airline)
     return updateairline;
   }
 
-  remove(id: number) {
-    return this.AirlineRepo.delete({id});
+  remove(Id: number) {
+    return this.AirlineRepo.delete({Id});
   }
 }

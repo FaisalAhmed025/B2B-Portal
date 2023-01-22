@@ -12,6 +12,8 @@ import { AirlinesModule } from './airlines/airlines.module';
 import { Airlines } from './airlines/entities/airline.entity';
 import { AirportsModule } from './airports/airports.module';
 import { Airports } from './airports/entities/airport.entity';
+import { AirticketModule } from './airticket/airticket.module';
+import { Airticket } from './airticket/entities/airticket.entity';
 
 @Module({
   imports: [
@@ -22,11 +24,14 @@ import { Airports } from './airports/entities/airport.entity';
     username: 'root',
     password: '',
     database: 'b2b',
-    entities: [Agent,AgentFailed, AgentLedger, Airlines,Airports],
+    entities: [Agent,AgentFailed, AgentLedger, Airlines,Airports,Airticket],
   }), 
-  AirportsModule,AgentModule, AgentFailedModule,
+  AirportsModule,
+  AgentModule,
+  AgentFailedModule,
   AgentLedgerModule,
   AirlinesModule,
+  AirticketModule,
    
   
   ],
