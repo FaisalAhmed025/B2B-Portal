@@ -36,7 +36,7 @@ export class AirticketService {
     ticket.PasengerType=updateAirticketDto.PasengerType
     ticket.SystemPnr=updateAirticketDto.SystemPnr
     const updatedticket = await this.airticketRepository.save(ticket)
-    return updatedticket;
+    return `User Id =${Id} Updated succesfully, ${updatedticket}` ;
   }
 
   remove(Id: number) {

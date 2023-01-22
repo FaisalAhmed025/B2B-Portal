@@ -14,7 +14,8 @@ import { AirportsModule } from './airports/airports.module';
 import { Airports } from './airports/entities/airport.entity';
 import { AirticketModule } from './airticket/airticket.module';
 import { Airticket } from './airticket/entities/airticket.entity';
-
+import { AllairlinesModule } from './allairlines/allairlines.module';
+import { Allairlines } from './allairlines/entities/allairline.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -24,14 +25,24 @@ import { Airticket } from './airticket/entities/airticket.entity';
     username: 'root',
     password: '',
     database: 'b2b',
-    entities: [Agent,AgentFailed, AgentLedger, Airlines,Airports,Airticket],
+    entities:[
+      Agent,
+      AgentFailed,
+      AgentLedger,
+      Airlines,
+      Airports,
+      Airticket,
+      Allairlines
+    ],
   }), 
-  AirportsModule,
+  
   AgentModule,
   AgentFailedModule,
   AgentLedgerModule,
+  AirportsModule,
   AirlinesModule,
   AirticketModule,
+  AllairlinesModule,
    
   
   ],
