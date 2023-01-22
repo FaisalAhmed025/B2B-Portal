@@ -4,13 +4,13 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 export class Airlines {
     @Column()
     @PrimaryGeneratedColumn()
-    id:number
+    Id:number
     @Column()
-    name:string
+    Name:string
     @Column()
-    nameBangla:string
+    NameBangla:string
     @Column()
-    code:string
+    Code:string
     @Column()
-    commission:number
+    Commission:number
 }

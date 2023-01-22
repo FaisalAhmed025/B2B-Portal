@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { LazyModuleLoader } from '@nestjs/core';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAgentDto } from './dto/create-agent.dto';
@@ -20,30 +19,30 @@ export class AgentService {
     return this.agentrepository.find({});
   }
 
-  findOne(id: number) {
-    return this.agentrepository.findOneBy({id});
+  findOne(Id: number) {
+    return this.agentrepository.findOneBy({Id});
   }
 
   async update(id: number, updateAgentDto: UpdateAgentDto) {
     const agent = await this.findOne(id)
-    agent.agentId =updateAgentDto.agentId
-    agent.name =updateAgentDto.name
-    agent.password =updateAgentDto.password
-    agent.phone =updateAgentDto.phone
-    agent.joinAt =updateAgentDto.joinAt
-    agent.status =updateAgentDto.status
-    agent.isActive=updateAgentDto.isActive
-    agent.company =updateAgentDto.company
-    agent.companyImage =updateAgentDto.companyImage
-    agent.companyadd =updateAgentDto.companyadd
-    agent.bonus=updateAgentDto.bonus
-    agent.credit=updateAgentDto.credit
-    agent.browser=updateAgentDto.browser
-    agent.area =updateAgentDto.area
-    agent.platform=updateAgentDto.platform
-    agent.markup=updateAgentDto.markup
-    agent.loginIp=updateAgentDto.loginIp
-    agent.logoPermission=updateAgentDto.logoPermission
+    agent.AgentId =updateAgentDto.AgentId
+    agent.Name =updateAgentDto.Name
+    agent.Password =updateAgentDto.Password
+    agent.Phone =updateAgentDto.Phone
+    agent.JoinAt =updateAgentDto.JoinAt
+    agent.Status =updateAgentDto.Status
+    agent.IsActive=updateAgentDto.IsActive
+    agent.Company =updateAgentDto.Company
+    agent.CompanyImage =updateAgentDto.CompanyImage
+    agent.Companyadd =updateAgentDto.Companyadd
+    agent.Bonus=updateAgentDto.Bonus
+    agent.Credit=updateAgentDto.Credit
+    agent.Browser=updateAgentDto.Browser
+    agent.Area =updateAgentDto.Area
+    agent.Platform=updateAgentDto.Platform
+    agent.Markup=updateAgentDto.Markup
+    agent.LoginIp=updateAgentDto.LoginIp
+    agent.LogoPermission=updateAgentDto.LogoPermission
     const updateagent =this.agentrepository.save(agent)
     return updateagent;
   }

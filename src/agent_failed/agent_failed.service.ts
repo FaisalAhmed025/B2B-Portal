@@ -19,21 +19,21 @@ export class AgentFailedService {
     return this.agentfailedRepo.find({});
   }
 
-  findOne(id: number) {
-    return this.agentfailedRepo.findOneBy({id}) ;
+  findOne(Id: number) {
+    return this.agentfailedRepo.findOneBy({Id}) ;
   }
 
   async update(id: number, updateAgentFailedtDto: UpdateAgentFailedDto) {
 
     const agentfailed = await this.findOne(id)
 
-    agentfailed.name =updateAgentFailedtDto.name
-    agentfailed.password =updateAgentFailedtDto.password
-    agentfailed.phone =updateAgentFailedtDto.phone
-    agentfailed.joinAt=updateAgentFailedtDto.joinAt
-    agentfailed.status= updateAgentFailedtDto.status
-    agentfailed.company=updateAgentFailedtDto.company
-    agentfailed.companyadd =updateAgentFailedtDto.companyadd
+    agentfailed.Name =updateAgentFailedtDto.Name
+    agentfailed.Password =updateAgentFailedtDto.Password
+    agentfailed.Phone =updateAgentFailedtDto.Phone
+    agentfailed.JoinAt=updateAgentFailedtDto.JoinAt
+    agentfailed.Status= updateAgentFailedtDto.Status
+    agentfailed.Company=updateAgentFailedtDto.Company
+    agentfailed.CompanyAdd =updateAgentFailedtDto.CompanyAdd
 
     const newagent = await this.agentfailedRepo.save(agentfailed)
     return newagent;
@@ -41,7 +41,7 @@ export class AgentFailedService {
 
   }
 
-  remove(id: number) {
-    return this.agentfailedRepo.delete({id});
+  remove(Id: number) {
+    return this.agentfailedRepo.delete({Id});
   }
 }

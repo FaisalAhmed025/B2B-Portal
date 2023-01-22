@@ -10,9 +10,11 @@ import { AgentLedgerModule } from './agent_ledger/agent_ledger.module';
 import { AgentLedger } from './agent_ledger/entities/agent_ledger.entity';
 import { AirlinesModule } from './airlines/airlines.module';
 import { Airlines } from './airlines/entities/airline.entity';
+import { AirportsModule } from './airports/airports.module';
+import { Airports } from './airports/entities/airport.entity';
 
 @Module({
-  imports: [AgentModule, AgentFailedModule, AgentLedgerModule, AirlinesModule, 
+  imports: [
     TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
@@ -20,8 +22,11 @@ import { Airlines } from './airlines/entities/airline.entity';
     username: 'root',
     password: '',
     database: 'b2b',
-    entities: [Agent,AgentFailed, AgentLedger, Airlines],
-  }),
+    entities: [Agent,AgentFailed, AgentLedger, Airlines,Airports],
+  }), 
+  AirportsModule,AgentModule, AgentFailedModule,
+  AgentLedgerModule,
+  AirlinesModule,
    
   
   ],

@@ -5,45 +5,45 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class Agent {
     @Column()
     @PrimaryGeneratedColumn()
-    id:number 
+    Id:number 
     @Column()
-    agentId:string
+    AgentId:string
     @Column()
-    name:string
+    Name:string
     @Column()
-    email:string
+    Email:string
     @Column()
-    password:string
+    Password:string
     @Column()
-    phone:string
+    Phone:string
     @Column()
-    joinAt:string
+    JoinAt:string
     @Column()
-    status:string
+    Status:string
 
     @Column()
-    isActive:string
+    IsActive:string
     @Column()
-    company:string
+    Company:string
 
     @Column()
-    companyadd:string
+    Companyadd:string
     @Column()
-    area:string
+    Area:string
     @Column()
-    companyImage:string
+    CompanyImage:string
     @Column()
-    logoPermission:number
+    LogoPermission:number
     @Column()
-    markup:string
+    Markup:string
     @Column()
-    bonus:number
+    Bonus:number
     @Column()
-    credit:number
+    Credit:number
     @Column()
-    loginIp:string
+    LoginIp:string
     @Column()
-    browser:string
+    Browser:string
     @Column()
-    platform:string
+    Platform:string
 }
