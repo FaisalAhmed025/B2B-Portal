@@ -18,6 +18,11 @@ import { AllairlinesModule } from './allairlines/allairlines.module';
 import { Allairlines } from './allairlines/entities/allairline.entity';
 import { AllairportModule } from './allairport/allairport.module';
 import { Allairport } from './allairport/entities/allairport.entity';
+import { AllpackagesModule } from './allpackages/allpackages.module';
+import { Allpackages } from './allpackages/entities/allpackage.entity';
+
+
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -35,7 +40,8 @@ import { Allairport } from './allairport/entities/allairport.entity';
       Airports,
       Airticket,
       Allairlines,
-      Allairport
+      Allairport,
+      Allpackages
     ],
   }), 
   
@@ -47,6 +53,7 @@ import { Allairport } from './allairport/entities/allairport.entity';
   AirticketModule,
   AllairlinesModule,
   AllairportModule,
+  AllpackagesModule,
    
   
   ],
