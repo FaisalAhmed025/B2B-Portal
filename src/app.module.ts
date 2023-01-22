@@ -16,6 +16,8 @@ import { AirticketModule } from './airticket/airticket.module';
 import { Airticket } from './airticket/entities/airticket.entity';
 import { AllairlinesModule } from './allairlines/allairlines.module';
 import { Allairlines } from './allairlines/entities/allairline.entity';
+import { AllairportModule } from './allairport/allairport.module';
+import { Allairport } from './allairport/entities/allairport.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -32,7 +34,8 @@ import { Allairlines } from './allairlines/entities/allairline.entity';
       Airlines,
       Airports,
       Airticket,
-      Allairlines
+      Allairlines,
+      Allairport
     ],
   }), 
   
@@ -43,6 +46,7 @@ import { Allairlines } from './allairlines/entities/allairline.entity';
   AirlinesModule,
   AirticketModule,
   AllairlinesModule,
+  AllairportModule,
    
   
   ],

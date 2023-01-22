@@ -28,7 +28,7 @@ export class AllairlinesService {
     allairlines.Name= updateAllairlineDto.Name
 
     const updateAllairline= await this.allairlinesRepo.save(allairlines)
-    return updateAllairline;
+    return updateAllairline
    
   }
 
