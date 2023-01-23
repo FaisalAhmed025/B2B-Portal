@@ -28,6 +28,8 @@ import { BookingothersModule } from './bookingothers/bookingothers.module';
 import { Bookingothers } from './bookingothers/entities/bookingother.entity';
 import { ChatModule } from './chat/chat.module';
 import { Chat } from './chat/entities/chat.entity';
+import { ControlModule } from './control/control.module';
+import { Control } from './control/entities/control.entity';
 
 
 
@@ -53,7 +55,8 @@ import { Chat } from './chat/entities/chat.entity';
       Bankaccounts,
       Booking,
       Bookingothers,
-      Chat
+      Chat,
+      Control,
     ],
   }), 
   
@@ -70,6 +73,7 @@ import { Chat } from './chat/entities/chat.entity';
   BookingModule,
   BookingothersModule,
   ChatModule,
+  ControlModule,
    
   
   ],
