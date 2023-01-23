@@ -39,7 +39,6 @@ export class BookingothersService {
 
     const updatedBoOthers= await this.bookingothersRepo.save(bookingothers)
     return updatedBoOthers;
-    return ;
   }
 
   remove(Id: number) {
