@@ -46,6 +46,8 @@ import { LastloginModule } from './lastlogin/lastlogin.module';
 import { Lastlogin } from './lastlogin/entities/lastlogin.entity';
 import { NotesModule } from './notes/notes.module';
 import { Notes } from './notes/entities/note.entity';
+import { NotificationModule } from './notification/notification.module';
+import { Notification } from './notification/entities/notification.entity';
 
 
 
@@ -80,7 +82,8 @@ import { Notes } from './notes/entities/note.entity';
       Forgetpassword,
       Jobs,
       Lastlogin,
-      Notes
+      Notes,
+      Notification
     ],
   }), 
   
@@ -106,6 +109,8 @@ import { Notes } from './notes/entities/note.entity';
   JobsModule,
   LastloginModule,
   NotesModule,
+  NotificationModule,
+  Notification
    
   
   ],
