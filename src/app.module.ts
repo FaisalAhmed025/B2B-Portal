@@ -40,6 +40,8 @@ import { FailedbookingModule } from './failedbooking/failedbooking.module';
 import { Failedbooking } from './failedbooking/entities/failedbooking.entity';
 import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
 import { Forgetpassword } from './forgetpassword/entities/forgetpassword.entity';
+import { JobsModule } from './jobs/jobs.module';
+import { Jobs } from './jobs/entities/job.entity';
 
 
 
@@ -71,7 +73,8 @@ import { Forgetpassword } from './forgetpassword/entities/forgetpassword.entity'
       DeletedAgent,
       Depositrequest,
       Failedbooking,
-      Forgetpassword
+      Forgetpassword,
+      Jobs
     ],
   }), 
   
@@ -94,6 +97,7 @@ import { Forgetpassword } from './forgetpassword/entities/forgetpassword.entity'
   DepositrequestModule,
   FailedbookingModule,
   ForgetpasswordModule,
+  JobsModule,
    
   
   ],
