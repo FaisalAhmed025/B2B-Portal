@@ -34,6 +34,8 @@ import { CouponModule } from './coupon/coupon.module';
 import { Coupon } from './coupon/entities/coupon.entity';
 import { DeletedAgentModule } from './deleted_agent/deleted_agent.module';
 import { DeletedAgent } from './deleted_agent/entities/deleted_agent.entity';
+import { DepositrequestModule } from './depositrequest/depositrequest.module';
+import { Depositrequest } from './depositrequest/entities/depositrequest.entity';
 
 
 
@@ -62,7 +64,8 @@ import { DeletedAgent } from './deleted_agent/entities/deleted_agent.entity';
       Chat,
       Control,
       Coupon,
-      DeletedAgent
+      DeletedAgent,
+      Depositrequest
     ],
   }), 
   
@@ -82,6 +85,7 @@ import { DeletedAgent } from './deleted_agent/entities/deleted_agent.entity';
   ControlModule,
   CouponModule,
   DeletedAgentModule,
+  DepositrequestModule,
    
   
   ],
