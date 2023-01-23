@@ -22,6 +22,8 @@ import { AllpackagesModule } from './allpackages/allpackages.module';
 import { Allpackages } from './allpackages/entities/allpackage.entity';
 import { BankaccountsModule } from './bankaccounts/bankaccounts.module';
 import { Bankaccounts } from './bankaccounts/entities/bankaccount.entity';
+import { BookingModule } from './booking/booking.module';
+import { Booking } from './booking/entities/booking.entity';
 
 
 
@@ -44,7 +46,8 @@ import { Bankaccounts } from './bankaccounts/entities/bankaccount.entity';
       Allairlines,
       Allairport,
       Allpackages,
-      Bankaccounts
+      Bankaccounts,
+      Booking
     ],
   }), 
   
@@ -58,6 +61,7 @@ import { Bankaccounts } from './bankaccounts/entities/bankaccount.entity';
   AllairportModule,
   AllpackagesModule,
   BankaccountsModule,
+  BookingModule,
    
   
   ],
