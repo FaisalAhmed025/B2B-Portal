@@ -36,6 +36,8 @@ import { DeletedAgentModule } from './deleted_agent/deleted_agent.module';
 import { DeletedAgent } from './deleted_agent/entities/deleted_agent.entity';
 import { DepositrequestModule } from './depositrequest/depositrequest.module';
 import { Depositrequest } from './depositrequest/entities/depositrequest.entity';
+import { FailedbookingModule } from './failedbooking/failedbooking.module';
+import { Failedbooking } from './failedbooking/entities/failedbooking.entity';
 
 
 
@@ -65,7 +67,8 @@ import { Depositrequest } from './depositrequest/entities/depositrequest.entity'
       Control,
       Coupon,
       DeletedAgent,
-      Depositrequest
+      Depositrequest,
+      Failedbooking
     ],
   }), 
   
@@ -86,6 +89,7 @@ import { Depositrequest } from './depositrequest/entities/depositrequest.entity'
   CouponModule,
   DeletedAgentModule,
   DepositrequestModule,
+  FailedbookingModule,
    
   
   ],
