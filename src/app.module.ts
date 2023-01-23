@@ -42,6 +42,8 @@ import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
 import { Forgetpassword } from './forgetpassword/entities/forgetpassword.entity';
 import { JobsModule } from './jobs/jobs.module';
 import { Jobs } from './jobs/entities/job.entity';
+import { LastloginModule } from './lastlogin/lastlogin.module';
+import { Lastlogin } from './lastlogin/entities/lastlogin.entity';
 
 
 
@@ -74,7 +76,8 @@ import { Jobs } from './jobs/entities/job.entity';
       Depositrequest,
       Failedbooking,
       Forgetpassword,
-      Jobs
+      Jobs,
+      Lastlogin
     ],
   }), 
   
@@ -98,6 +101,7 @@ import { Jobs } from './jobs/entities/job.entity';
   FailedbookingModule,
   ForgetpasswordModule,
   JobsModule,
+  LastloginModule,
    
   
   ],
