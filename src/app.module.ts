@@ -30,6 +30,8 @@ import { ChatModule } from './chat/chat.module';
 import { Chat } from './chat/entities/chat.entity';
 import { ControlModule } from './control/control.module';
 import { Control } from './control/entities/control.entity';
+import { CouponModule } from './coupon/coupon.module';
+import { Coupon } from './coupon/entities/coupon.entity';
 
 
 
@@ -57,6 +59,7 @@ import { Control } from './control/entities/control.entity';
       Bookingothers,
       Chat,
       Control,
+      Coupon
     ],
   }), 
   
@@ -74,6 +77,7 @@ import { Control } from './control/entities/control.entity';
   BookingothersModule,
   ChatModule,
   ControlModule,
+  CouponModule,
    
   
   ],
