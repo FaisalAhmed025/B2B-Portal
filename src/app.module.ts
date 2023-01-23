@@ -32,6 +32,8 @@ import { ControlModule } from './control/control.module';
 import { Control } from './control/entities/control.entity';
 import { CouponModule } from './coupon/coupon.module';
 import { Coupon } from './coupon/entities/coupon.entity';
+import { DeletedAgentModule } from './deleted_agent/deleted_agent.module';
+import { DeletedAgent } from './deleted_agent/entities/deleted_agent.entity';
 
 
 
@@ -59,7 +61,8 @@ import { Coupon } from './coupon/entities/coupon.entity';
       Bookingothers,
       Chat,
       Control,
-      Coupon
+      Coupon,
+      DeletedAgent
     ],
   }), 
   
@@ -78,6 +81,7 @@ import { Coupon } from './coupon/entities/coupon.entity';
   ChatModule,
   ControlModule,
   CouponModule,
+  DeletedAgentModule,
    
   
   ],
