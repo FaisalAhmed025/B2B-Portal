@@ -38,6 +38,8 @@ import { DepositrequestModule } from './depositrequest/depositrequest.module';
 import { Depositrequest } from './depositrequest/entities/depositrequest.entity';
 import { FailedbookingModule } from './failedbooking/failedbooking.module';
 import { Failedbooking } from './failedbooking/entities/failedbooking.entity';
+import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
+import { Forgetpassword } from './forgetpassword/entities/forgetpassword.entity';
 
 
 
@@ -68,7 +70,8 @@ import { Failedbooking } from './failedbooking/entities/failedbooking.entity';
       Coupon,
       DeletedAgent,
       Depositrequest,
-      Failedbooking
+      Failedbooking,
+      Forgetpassword
     ],
   }), 
   
@@ -90,6 +93,7 @@ import { Failedbooking } from './failedbooking/entities/failedbooking.entity';
   DeletedAgentModule,
   DepositrequestModule,
   FailedbookingModule,
+  ForgetpasswordModule,
    
   
   ],
