@@ -60,6 +60,8 @@ import { SegmentonewayModule } from './segmentoneway/segmentoneway.module';
 import { Segmentoneway } from './segmentoneway/entities/segmentoneway.entity';
 import { SegmentreturnwayModule } from './segmentreturnway/segmentreturnway.module';
 import { Segmentreturnway } from './segmentreturnway/entities/segmentreturnway.entity';
+import { StafflistModule } from './stafflist/stafflist.module';
+import { Stafflist } from './stafflist/entities/stafflist.entity';
 
 
 
@@ -101,7 +103,8 @@ import { Segmentreturnway } from './segmentreturnway/entities/segmentreturnway.e
       Refund,
       Reissue,
       Segmentoneway,
-      Segmentreturnway
+      Segmentreturnway,
+      Stafflist
     ],
   }), 
   
@@ -134,7 +137,8 @@ import { Segmentreturnway } from './segmentreturnway/entities/segmentreturnway.e
   RefundModule,
   ReissueModule,
   SegmentonewayModule,
-  SegmentreturnwayModule
+  SegmentreturnwayModule,
+  StafflistModule
    
   
   ],
