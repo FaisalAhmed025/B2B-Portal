@@ -24,6 +24,7 @@ export class SegmentonewayService {
     return this.segmentOneWay.findOneBy({Id});
   }
 
+  
   update(id: number, updateSegmentonewayDto: UpdateSegmentonewayDto) {
     return `This action updates a #${id} segmentoneway`;
   }

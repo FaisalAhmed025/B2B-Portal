@@ -58,6 +58,8 @@ import { ReissueModule } from './reissue/reissue.module';
 import { Reissue } from './reissue/entities/reissue.entity';
 import { SegmentonewayModule } from './segmentoneway/segmentoneway.module';
 import { Segmentoneway } from './segmentoneway/entities/segmentoneway.entity';
+import { SegmentreturnwayModule } from './segmentreturnway/segmentreturnway.module';
+import { Segmentreturnway } from './segmentreturnway/entities/segmentreturnway.entity';
 
 
 
@@ -98,7 +100,8 @@ import { Segmentoneway } from './segmentoneway/entities/segmentoneway.entity';
       Passengers,
       Refund,
       Reissue,
-      Segmentoneway
+      Segmentoneway,
+      Segmentreturnway
     ],
   }), 
   
@@ -130,7 +133,8 @@ import { Segmentoneway } from './segmentoneway/entities/segmentoneway.entity';
   PassengersModule,
   RefundModule,
   ReissueModule,
-  SegmentonewayModule
+  SegmentonewayModule,
+  SegmentreturnwayModule
    
   
   ],
