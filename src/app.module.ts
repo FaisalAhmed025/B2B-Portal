@@ -62,6 +62,8 @@ import { SegmentreturnwayModule } from './segmentreturnway/segmentreturnway.modu
 import { Segmentreturnway } from './segmentreturnway/entities/segmentreturnway.entity';
 import { StafflistModule } from './stafflist/stafflist.module';
 import { Stafflist } from './stafflist/entities/stafflist.entity';
+import { SubagentModule } from './subagent/subagent.module';
+import { Subagent } from './subagent/entities/subagent.entity';
 
 
 
@@ -104,7 +106,8 @@ import { Stafflist } from './stafflist/entities/stafflist.entity';
       Reissue,
       Segmentoneway,
       Segmentreturnway,
-      Stafflist
+      Stafflist,
+      Subagent
     ],
   }), 
   
@@ -138,7 +141,8 @@ import { Stafflist } from './stafflist/entities/stafflist.entity';
   ReissueModule,
   SegmentonewayModule,
   SegmentreturnwayModule,
-  StafflistModule
+  StafflistModule,
+  SubagentModule
    
   
   ],
