@@ -48,6 +48,8 @@ import { NotesModule } from './notes/notes.module';
 import { Notes } from './notes/entities/note.entity';
 import { NotificationModule } from './notification/notification.module';
 import { Notification } from './notification/entities/notification.entity';
+import { OrdersModule } from './orders/orders.module';
+import { Orders } from './orders/entities/order.entity';
 
 
 
@@ -83,7 +85,8 @@ import { Notification } from './notification/entities/notification.entity';
       Jobs,
       Lastlogin,
       Notes,
-      Notification
+      Notification,
+      Orders
     ],
   }), 
   
@@ -110,7 +113,8 @@ import { Notification } from './notification/entities/notification.entity';
   LastloginModule,
   NotesModule,
   NotificationModule,
-  Notification
+  Notification,
+  OrdersModule
    
   
   ],
