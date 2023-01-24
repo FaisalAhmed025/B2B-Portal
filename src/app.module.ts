@@ -72,6 +72,8 @@ import { VisaModule } from './visa/visa.module';
 import { Visa } from './visa/entities/visa.entity';
 import { VisachecklistModule } from './visachecklist/visachecklist.module';
 import { Visachecklist } from './visachecklist/entities/visachecklist.entity';
+import { VisainfoModule } from './visainfo/visainfo.module';
+import { Visainfo } from './visainfo/entities/visainfo.entity';
 
 
 
@@ -119,7 +121,8 @@ import { Visachecklist } from './visachecklist/entities/visachecklist.entity';
       Ticketed,
       Users,
       Visa,
-      Visachecklist
+      Visachecklist,
+      Visainfo
     ],
   }), 
   
@@ -159,6 +162,8 @@ import { Visachecklist } from './visachecklist/entities/visachecklist.entity';
   UsersModule,
   VisaModule,
   VisachecklistModule,
+  VisainfoModule,
+
 
    
   
