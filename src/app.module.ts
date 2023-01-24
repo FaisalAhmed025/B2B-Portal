@@ -54,6 +54,8 @@ import { PassengersModule } from './passengers/passengers.module';
 import { Passengers } from './passengers/entities/passenger.entity';
 import { RefundModule } from './refund/refund.module';
 import { Refund } from './refund/entities/refund.entity';
+import { ReissueModule } from './reissue/reissue.module';
+import { Reissue } from './reissue/entities/reissue.entity';
 
 
 
@@ -92,7 +94,8 @@ import { Refund } from './refund/entities/refund.entity';
       Notification,
       Orders,
       Passengers,
-      Refund
+      Refund,
+      Reissue
     ],
   }), 
   
@@ -122,7 +125,8 @@ import { Refund } from './refund/entities/refund.entity';
   Notification,
   OrdersModule,
   PassengersModule,
-  RefundModule
+  RefundModule,
+  ReissueModule
    
   
   ],
