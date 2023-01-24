@@ -68,6 +68,8 @@ import { TicketedModule } from './ticketed/ticketed.module';
 import { Ticketed } from './ticketed/entities/ticketed.entity';
 import { UsersModule } from './users/users.module';
 import { Users } from './users/entities/user.entity';
+import { VisaModule } from './visa/visa.module';
+import { Visa } from './visa/entities/visa.entity';
 
 
 
@@ -113,7 +115,8 @@ import { Users } from './users/entities/user.entity';
       Stafflist,
       Subagent,
       Ticketed,
-      Users
+      Users,
+      Visa
     ],
   }), 
   
@@ -151,6 +154,7 @@ import { Users } from './users/entities/user.entity';
   SubagentModule,
   TicketedModule,
   UsersModule,
+  VisaModule,
 
    
   
