@@ -50,6 +50,8 @@ import { NotificationModule } from './notification/notification.module';
 import { Notification } from './notification/entities/notification.entity';
 import { OrdersModule } from './orders/orders.module';
 import { Orders } from './orders/entities/order.entity';
+import { PassengersModule } from './passengers/passengers.module';
+import { Passengers } from './passengers/entities/passenger.entity';
 
 
 
@@ -86,7 +88,8 @@ import { Orders } from './orders/entities/order.entity';
       Lastlogin,
       Notes,
       Notification,
-      Orders
+      Orders,
+      Passengers
     ],
   }), 
   
@@ -114,7 +117,8 @@ import { Orders } from './orders/entities/order.entity';
   NotesModule,
   NotificationModule,
   Notification,
-  OrdersModule
+  OrdersModule,
+  PassengersModule
    
   
   ],
