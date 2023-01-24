@@ -52,6 +52,8 @@ import { OrdersModule } from './orders/orders.module';
 import { Orders } from './orders/entities/order.entity';
 import { PassengersModule } from './passengers/passengers.module';
 import { Passengers } from './passengers/entities/passenger.entity';
+import { RefundModule } from './refund/refund.module';
+import { Refund } from './refund/entities/refund.entity';
 
 
 
@@ -89,7 +91,8 @@ import { Passengers } from './passengers/entities/passenger.entity';
       Notes,
       Notification,
       Orders,
-      Passengers
+      Passengers,
+      Refund
     ],
   }), 
   
@@ -118,7 +121,8 @@ import { Passengers } from './passengers/entities/passenger.entity';
   NotificationModule,
   Notification,
   OrdersModule,
-  PassengersModule
+  PassengersModule,
+  RefundModule
    
   
   ],
