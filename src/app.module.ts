@@ -74,6 +74,8 @@ import { VisachecklistModule } from './visachecklist/visachecklist.module';
 import { Visachecklist } from './visachecklist/entities/visachecklist.entity';
 import { VisainfoModule } from './visainfo/visainfo.module';
 import { Visainfo } from './visainfo/entities/visainfo.entity';
+import { VoidModule } from './void/void.module';
+import { Void } from './void/entities/void.entity';
 
 
 
@@ -122,7 +124,8 @@ import { Visainfo } from './visainfo/entities/visainfo.entity';
       Users,
       Visa,
       Visachecklist,
-      Visainfo
+      Visainfo,
+      Void
     ],
   }), 
   
@@ -163,6 +166,7 @@ import { Visainfo } from './visainfo/entities/visainfo.entity';
   VisaModule,
   VisachecklistModule,
   VisainfoModule,
+  VoidModule,
 
 
    

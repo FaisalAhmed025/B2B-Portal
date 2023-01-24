@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Visainfo } from './entities/visainfo.entity';
 
 @Module({
+
   imports:[TypeOrmModule.forFeature([Visainfo])],
   controllers: [VisainfoController],
   providers: [VisainfoService]
