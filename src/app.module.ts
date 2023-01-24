@@ -64,6 +64,8 @@ import { StafflistModule } from './stafflist/stafflist.module';
 import { Stafflist } from './stafflist/entities/stafflist.entity';
 import { SubagentModule } from './subagent/subagent.module';
 import { Subagent } from './subagent/entities/subagent.entity';
+import { TicketedModule } from './ticketed/ticketed.module';
+import { Ticketed } from './ticketed/entities/ticketed.entity';
 
 
 
@@ -107,7 +109,8 @@ import { Subagent } from './subagent/entities/subagent.entity';
       Segmentoneway,
       Segmentreturnway,
       Stafflist,
-      Subagent
+      Subagent,
+      Ticketed
     ],
   }), 
   
@@ -142,7 +145,8 @@ import { Subagent } from './subagent/entities/subagent.entity';
   SegmentonewayModule,
   SegmentreturnwayModule,
   StafflistModule,
-  SubagentModule
+  SubagentModule,
+  TicketedModule
    
   
   ],
