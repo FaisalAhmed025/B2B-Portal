@@ -56,6 +56,8 @@ import { RefundModule } from './refund/refund.module';
 import { Refund } from './refund/entities/refund.entity';
 import { ReissueModule } from './reissue/reissue.module';
 import { Reissue } from './reissue/entities/reissue.entity';
+import { SegmentonewayModule } from './segmentoneway/segmentoneway.module';
+import { Segmentoneway } from './segmentoneway/entities/segmentoneway.entity';
 
 
 
@@ -95,7 +97,8 @@ import { Reissue } from './reissue/entities/reissue.entity';
       Orders,
       Passengers,
       Refund,
-      Reissue
+      Reissue,
+      Segmentoneway
     ],
   }), 
   
@@ -126,7 +129,8 @@ import { Reissue } from './reissue/entities/reissue.entity';
   OrdersModule,
   PassengersModule,
   RefundModule,
-  ReissueModule
+  ReissueModule,
+  SegmentonewayModule
    
   
   ],
