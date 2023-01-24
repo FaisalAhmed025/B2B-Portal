@@ -70,6 +70,8 @@ import { UsersModule } from './users/users.module';
 import { Users } from './users/entities/user.entity';
 import { VisaModule } from './visa/visa.module';
 import { Visa } from './visa/entities/visa.entity';
+import { VisachecklistModule } from './visachecklist/visachecklist.module';
+import { Visachecklist } from './visachecklist/entities/visachecklist.entity';
 
 
 
@@ -116,7 +118,8 @@ import { Visa } from './visa/entities/visa.entity';
       Subagent,
       Ticketed,
       Users,
-      Visa
+      Visa,
+      Visachecklist
     ],
   }), 
   
@@ -155,6 +158,7 @@ import { Visa } from './visa/entities/visa.entity';
   TicketedModule,
   UsersModule,
   VisaModule,
+  VisachecklistModule,
 
    
   
