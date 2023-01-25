@@ -21,7 +21,7 @@ export class AgentService {
     return agent;
   }
 
-   async findOne(Id: number) {
+   async findOne(Id: number,) {
     const agent = await this.agentrepository.findOneBy({Id})
     if(!agent){
       throw new HttpException(`User ${Id} does not Exists`, HttpStatus.NOT_FOUND)
@@ -30,8 +30,8 @@ export class AgentService {
     return agent;
   }
 
-  async update(id: number, updateAgentDto: UpdateAgentDto) {
-    const agent = await this.findOne(id)
+  async update(Id: number, updateAgentDto: UpdateAgentDto) {
+    const agent = await this.findOne(Id)
     agent.AgentId =updateAgentDto.AgentId
     agent.Name =updateAgentDto.Name
     agent.Password =updateAgentDto.Password
@@ -54,10 +54,10 @@ export class AgentService {
     return updateagent;
   }
 
-  async remove(id: number) {
-    const deleteagent = await this.agentrepository.delete(id)
+  async remove(Id: number) {
+    const deleteagent = await this.agentrepository.delete(Id)
     if(!deleteagent){
-      throw new HttpException( {status:`User ${id} does not Exists`,}, HttpStatus.NOT_FOUND)
+      throw new HttpException( {status:`User ${Id} does not Exists`,}, HttpStatus.NOT_FOUND)
     }
     else
     return deleteagent;

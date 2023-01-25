@@ -15,19 +15,19 @@ export class AgentController {
   }
 
   @Get('allagents')
-   findAll() {
+  findAll() {
     return this.agentService.findAll();
     
     
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findone(@Param('id') id: number) {
    const agent =this.agentService.findOne(+id)
     if(!agent){
       throw new HttpException(`User ${id} does not Exists`, HttpStatus.NOT_FOUND)
     };
-    return agent;
+    return agent
   }
 
   @Patch(':id')

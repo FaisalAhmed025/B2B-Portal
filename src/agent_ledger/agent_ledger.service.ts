@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { createAgentLedgerDto } from './dto/create-agent_ledger.dto';
@@ -10,46 +10,48 @@ export class AgentLedgerService {
   constructor(@InjectRepository(AgentLedger) private agentLedgerRepo:Repository<AgentLedger>){}
   
   
-  create(CreateDto:createAgentLedgerDto) {
-    const createAgentL = this.agentLedgerRepo.create(CreateDto)
+ async create(CreateDto:createAgentLedgerDto) {
+    const createAgentL = await this.agentLedgerRepo.create(CreateDto)
     return  this.agentLedgerRepo.save(createAgentL);
   }
 
-  findAll() {
-    return this.agentLedgerRepo.find({});
+ async findAll() {
+    return  await this.agentLedgerRepo.find({});
   }
 
-  findOne(id: number) {
-    return  this.agentLedgerRepo.findOneBy({id});
+  async findOne(Id: number) {
+    const ledger = await this.agentLedgerRepo.findOneBy({Id});
+    if(!ledger){
+      throw new HttpException(`User Id  ${Id} does not exixt`, HttpStatus.NOT_FOUND)
+    }else
+    return ledger;
   }
 
-  async update(id: number, updateAgentLedgerDto: UpdateAgentLedgerDto) {
-    const agentledger = await this.findOne(id)
-
-    agentledger.agentSubId =updateAgentLedgerDto.agentSubId
-    agentledger.createdAt =updateAgentLedgerDto.createdAt
-    agentledger.actionBy =updateAgentLedgerDto.actionBy
-    agentledger.staffId =updateAgentLedgerDto.staffId
-    agentledger.deposit =updateAgentLedgerDto.deposit
-    agentledger.purchase =updateAgentLedgerDto.purchase
-    agentledger.loan =updateAgentLedgerDto.loan
-    agentledger.returnMoney =updateAgentLedgerDto.returnMoney
-    agentledger.void =updateAgentLedgerDto.void
-    agentledger.refund =updateAgentLedgerDto.refund
-    agentledger.refund =updateAgentLedgerDto.reissue
-    agentledger.others =updateAgentLedgerDto.others
-    agentledger.servicefee =updateAgentLedgerDto.servicefee
-    agentledger.lastAmount =updateAgentLedgerDto.lastAmount
-    agentledger.transactionId =updateAgentLedgerDto.transactionId
-    agentledger.details =updateAgentLedgerDto.details
-    agentledger.reference =updateAgentLedgerDto.reference
-
+  async update(Id: number, updateAgentLedgerDto: UpdateAgentLedgerDto) {
+    const agentledger = await this.findOne(Id)
+    agentledger.agentSubId =updateAgentLedgerDto.AgentSubId
+    agentledger.createdAt =updateAgentLedgerDto.CreatedAt
+    agentledger.actionBy =updateAgentLedgerDto.ActionBy
+    agentledger.staffId =updateAgentLedgerDto.StaffId
+    agentledger.deposit =updateAgentLedgerDto.Deposit
+    agentledger.purchase =updateAgentLedgerDto.Purchase
+    agentledger.loan =updateAgentLedgerDto.Loan
+    agentledger.returnMoney =updateAgentLedgerDto.ReturnMoney
+    agentledger.void =updateAgentLedgerDto.Void
+    agentledger.refund =updateAgentLedgerDto.Refund
+    agentledger.refund =updateAgentLedgerDto.Reissue
+    agentledger.others =updateAgentLedgerDto.Others
+    agentledger.servicefee =updateAgentLedgerDto.Servicefee
+    agentledger.lastAmount =updateAgentLedgerDto.LastAmount
+    agentledger.transactionId =updateAgentLedgerDto.TransactionId
+    agentledger.details =updateAgentLedgerDto.Details
+    agentledger.reference =updateAgentLedgerDto.Reference
     const updatedagent = await this.agentLedgerRepo.save(agentledger)
     return updatedagent;
 
   }
 
-  remove(id: number) {
-    return this.agentLedgerRepo.delete({id});
+  remove(Id: number) {
+    return this.agentLedgerRepo.delete(Id);
   }
 }

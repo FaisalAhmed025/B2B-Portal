@@ -13,8 +13,9 @@ export class ActivitylogController {
   }
 
   @Get('allactivitylog')
-  findAll() {
-    return this.activitylogService.findAll();
+  async findAll() {
+    const log= await this.activitylogService.findAll();
+    return log;
   }
 
   @Get(':id')

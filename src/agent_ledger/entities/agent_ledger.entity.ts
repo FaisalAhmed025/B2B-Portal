@@ -5,8 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class AgentLedger {
     @Column()
     @PrimaryGeneratedColumn()
-    id:number
-
+    Id:number
     @Column()
     agentSubId:string
     @Column()

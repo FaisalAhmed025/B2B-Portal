@@ -78,6 +78,8 @@ import { VoidModule } from './void/void.module';
 import { Void } from './void/entities/void.entity';
 import { ActivitylogModule } from './activitylog/activitylog.module';
 import { Activitylog } from './activitylog/entities/activitylog.entity';
+import { GroupfareModule } from './groupfare/groupfare.module';
+import { Groupfare } from './groupfare/entities/groupfare.entity';
 
 
 
@@ -128,7 +130,8 @@ import { Activitylog } from './activitylog/entities/activitylog.entity';
       Visachecklist,
       Visainfo,
       Void,
-      Activitylog
+      Activitylog,
+      Groupfare
     ],
   }), 
   
@@ -171,6 +174,7 @@ import { Activitylog } from './activitylog/entities/activitylog.entity';
   VisainfoModule,
   VoidModule,
   ActivitylogModule,
+  GroupfareModule,
 
 
    
