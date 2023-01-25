@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Req, Res, HttpException, HttpStatus } from '@nestjs/common';
 import { AgentService } from './agent.service';
 import { CreateAgentDto } from './dto/create-agent.dto';
 import { UpdateAgentDto } from './dto/update-agent.dto';
@@ -15,7 +15,7 @@ export class AgentController {
   }
 
   @Get('allagents')
-  findAll() {
+   findAll() {
     return this.agentService.findAll();
     
     
@@ -23,7 +23,11 @@ export class AgentController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.agentService.findOne(+id);
+   const agent =this.agentService.findOne(+id)
+    if(!agent){
+      throw new HttpException(`User ${id} does not Exists`, HttpStatus.NOT_FOUND)
+    };
+    return agent;
   }
 
   @Patch(':id')

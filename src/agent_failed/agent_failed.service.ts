@@ -1,4 +1,4 @@
-import { Injectable, Post } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAgentFailedDto } from './dto/create-agent_failed.dto';
@@ -9,18 +9,25 @@ import { AgentFailed } from './entities/agent_failed.entity';
 export class AgentFailedService {
   constructor(@InjectRepository(AgentFailed) private agentfailedRepo:Repository<AgentFailed>){}
   
-  create(createAgentFailedDto: CreateAgentFailedDto) {
-    const newagent = this.agentfailedRepo.create(createAgentFailedDto)
-    return this.agentfailedRepo.save(newagent);
+  async create(createAgentFailedDto: CreateAgentFailedDto) {
+    const newagent = await this.agentfailedRepo.create(createAgentFailedDto)
+    const agentFailed = this.agentfailedRepo.save(newagent);
+    return agentFailed;
   }
 
   
-  findAll() {
-    return this.agentfailedRepo.find({});
+  async findAll() {
+  const agentFailed= await this.agentfailedRepo.find({});
+  return agentFailed;
   }
 
-  findOne(Id: number) {
-    return this.agentfailedRepo.findOneBy({Id}) ;
+  async findOne(Id: number) {
+    const agentFailed= await this.agentfailedRepo.findOneBy({Id});
+    if(!agentFailed){
+      throw new HttpException(`User ${Id} does not Exists`, HttpStatus.NOT_FOUND)
+    }
+    else
+    return agentFailed;
   }
 
   async update(id: number, updateAgentFailedtDto: UpdateAgentFailedDto) {
@@ -41,7 +48,8 @@ export class AgentFailedService {
 
   }
 
-  remove(Id: number) {
-    return this.agentfailedRepo.delete({Id});
+ async remove(Id: number) {
+    const agentFailed= await this.agentfailedRepo.delete({Id});
+    return agentFailed;
   }
 }
