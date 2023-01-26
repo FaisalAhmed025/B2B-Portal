@@ -80,6 +80,9 @@ import { ActivitylogModule } from './activitylog/activitylog.module';
 import { Activitylog } from './activitylog/entities/activitylog.entity';
 import { GroupfareModule } from './groupfare/groupfare.module';
 import { Groupfare } from './groupfare/entities/groupfare.entity';
+import { AuthModule } from './auth/auth.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 
 
@@ -175,12 +178,16 @@ import { Groupfare } from './groupfare/entities/groupfare.entity';
   VoidModule,
   ActivitylogModule,
   GroupfareModule,
+  AuthModule,
 
 
    
   
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, {
+    provide: APP_INTERCEPTOR,
+    useClass: AuthInterceptor,
+  }],
 })
 export class AppModule {}

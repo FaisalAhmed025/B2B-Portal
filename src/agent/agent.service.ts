@@ -21,7 +21,7 @@ export class AgentService {
     return agent;
   }
 
-   async findOne(Id: number,) {
+   async findOne(Id:number) {
     const agent = await this.agentrepository.findOneBy({Id})
     if(!agent){
       throw new HttpException(`User ${Id} does not Exists`, HttpStatus.NOT_FOUND)
