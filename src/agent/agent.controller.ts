@@ -13,36 +13,53 @@ export class AgentController {
   constructor(private readonly agentSer: AgentService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Post()
+  @Post('createagent')
   create(@Body() createagentDto: CreateAgentDto) {
     return this.agentSer.create(createagentDto);
   }
 
-  @Get()
+  @UseGuards(JwtAuthGuard)
+  @Get('getallagent')
   findAll() {
     return this.agentSer.findAll();
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string, @Res() res: Response): Promise<Response> {
-    let book = await this.agentSer.findOne(+id)
-    if(book) return res.status(HttpStatus.OK).json(book)
-    return res.status(HttpStatus.NOT_FOUND).json({"error" : "This resource  no longer exist or has been removed"})
+  async findOne(
+    @Param('id') id: string,
+    @Res() res: Response,
+  ): Promise<Response> {
+    let user = await this.agentSer.findOne(+id);
+    if (user) return res.status(HttpStatus.OK).json(user);
+    return res
+      .status(HttpStatus.NOT_FOUND)
+      .json({ error: 'This resource  no longer exist or has been removed' });
   }
 
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
-  async update(@Param('Id') Id: number, @Body() updateagentDto: UpdateAgentDto, @Res() res: Response) {
+  async update(
+    @Param('Id') Id: number,
+    @Body() updateagentDto: UpdateAgentDto,
+    @Res() res: Response,
+  ) {
     const response = await this.agentSer.update(+Id, updateagentDto);
-    if(response) return res.status(HttpStatus.OK).json({"message" : "Book information updated successfully"});
-    return res.status(HttpStatus.NOT_FOUND).json({"error" : "The resource to be updated no longer exist"})
+    if (response)
+      return res
+        .status(HttpStatus.OK)
+        .json({ message: 'Book information updated successfully' });
+    return res
+      .status(HttpStatus.NOT_FOUND)
+      .json({ error: 'The resource to be updated no longer exist' });
   }
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('Id') Id: string, @Res() res: Response) {
     await this.agentSer.remove(+Id);
-    res.status(HttpStatus.OK).json({"message" : "Book details deleted successfully"});
+    res
+      .status(HttpStatus.OK)
+      .json({ message: 'Book details deleted successfully' });
   }
 }
 

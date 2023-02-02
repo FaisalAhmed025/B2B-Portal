@@ -20,9 +20,23 @@ export class UsersService {
     return this.UsersRepo.find({});
   }
 
+  async getUserByEmail(Email:string):Promise<Users>{
+    return this.UsersRepo.findOne({
+      where:{Email}
+    })
+  }
+
   findOne(Id: number) {
     return this.UsersRepo.findOneBy({Id});
   }
+
+  // async findOneByEmail(Email:string):Promise<Users>{
+  //   return this.UsersRepo.findOne({
+  //     where:{
+  //       Email:Email
+  //     }
+  //   })
+  // }
 
   async update(Id: number, updateUserDto: UpdateUserDto) {
     const user = await this.findOne(Id)
