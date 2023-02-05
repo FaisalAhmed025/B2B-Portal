@@ -91,7 +91,11 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MulterModule.register({ dest: './uploads' }),
+    MulterModule.registerAsync({
+      useFactory: () => ({
+        dest: './upload',
+      }),
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',

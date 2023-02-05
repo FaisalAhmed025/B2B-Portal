@@ -9,6 +9,11 @@ import {
   Body,
   UseInterceptors,
   UploadedFile,
+  ParseFilePipe,
+  MaxFileSizeValidator,
+  FileTypeValidator,
+  ParseFilePipeBuilder,
+  HttpStatus,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AppService } from './app.service';
@@ -26,22 +31,45 @@ export class AppController {
   ) {}
 
   @Post('upload')
-  @UseInterceptors(FileInterceptor('file',
-  {
-    storage:diskStorage({
-      destination: './files',
-      filename:(req, file, callback)=>{
-        const uniqueSuffix = Date.now() + '-' +Math.round(Math.random()*1e9);
-        const ext = extname(file.originalname)
-        const filename = `${file.originalname}-${uniqueSuffix}${ext}`;
-        callback(null, filename)
-      }
-    })
-  }))
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
-    console.log("uploaded file is :", file);
-    
-    return 'file uploaded  ';
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './files',
+        filename: (req, file, callback) => {
+          const uniqueSuffix =
+            Date.now() + '-' + Math.round(Math.random() * 1e9);
+          const ext = extname(file.originalname);
+          const filename = `${file.originalname}-${uniqueSuffix}${ext}`;
+          callback(null, filename);
+        },
+      }),
+    }),
+  )
+  uploadFile(
+    @UploadedFile(
+      // new ParseFilePipe({
+      //   validators: [
+      //     new MaxFileSizeValidator({ maxSize: 1000 }),
+      //     new FileTypeValidator({ fileType: 'text/plain' }),
+      //   ],
+      // }),
+
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'text/plain',
+        })
+        .addMaxSizeValidator({
+          maxSize: 1000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log('uploaded file is :', file);
+
+    return 'file uploaded Api working';
   }
 
   @Post('auth/login')
