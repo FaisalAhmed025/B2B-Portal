@@ -1,5 +1,6 @@
 import { JwtAuthGuard } from './auth/Guard/jwt-auth.guard';
 import { AuthService } from 'src/auth/auth.service';
+import { initializeApp } from 'firebase/app';
 import {
   Controller,
   Get,
