@@ -4,22 +4,22 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class AgentFailed {
     @Column()
     @PrimaryGeneratedColumn()
-    id:number
+    Id:number
     @Column()
-    name:string
+    Name:string
     @Column()
-    email:string
+    Email:string
     @Column()
-    password:string
+    Password:string
     @Column()
-    phone:string
+    Phone:string
     @Column()
-    joinAt:string
+    JoinAt:string
     @Column()
-    status:string
+    Status:string
     @Column()
-    company:string
+    Company:string
     @Column()
-    companyadd:string
+    CompanyAdd:string
   
 }

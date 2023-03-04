@@ -1,5 +1,4 @@
-import { Injectable } from '@nestjs/common';
-import { LazyModuleLoader } from '@nestjs/core';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAgentDto } from './dto/create-agent.dto';
@@ -11,45 +10,56 @@ import { Agent } from './entities/agent.entity';
 export class AgentService {
   constructor(@InjectRepository(Agent) private agentrepository:Repository <Agent>){}
 
-  create(createAgentDto: CreateAgentDto) {
-    const newagent = this.agentrepository.create(createAgentDto)
-    return this.agentrepository.save(newagent);
+  async create(createAgentDto: CreateAgentDto) {
+    const newagent = await this.agentrepository.create(createAgentDto)
+    const agent= this.agentrepository.save(newagent);
+    return agent;
   }
 
-  findAll() {
-    return this.agentrepository.find({});
+  async findAll() {
+    const agent= await this.agentrepository.find({});
+    return agent;
   }
 
-  findOne(id: number) {
-    return this.agentrepository.findOneBy({id});
+   async findOne(Id:number) {
+    const agent = await this.agentrepository.findOneBy({Id})
+    if(!agent){
+      throw new HttpException(`User ${Id} does not Exists`, HttpStatus.NOT_FOUND)
+    }
+    else
+    return agent;
   }
 
-  async update(id: number, updateAgentDto: UpdateAgentDto) {
-    const agent = await this.findOne(id)
-    agent.agentId =updateAgentDto.agentId
-    agent.name =updateAgentDto.name
-    agent.password =updateAgentDto.password
-    agent.phone =updateAgentDto.phone
-    agent.joinAt =updateAgentDto.joinAt
-    agent.status =updateAgentDto.status
-    agent.isActive=updateAgentDto.isActive
-    agent.company =updateAgentDto.company
-    agent.companyImage =updateAgentDto.companyImage
-    agent.companyadd =updateAgentDto.companyadd
-    agent.bonus=updateAgentDto.bonus
-    agent.credit=updateAgentDto.credit
-    agent.browser=updateAgentDto.browser
-    agent.area =updateAgentDto.area
-    agent.platform=updateAgentDto.platform
-    agent.markup=updateAgentDto.markup
-    agent.loginIp=updateAgentDto.loginIp
-    agent.logoPermission=updateAgentDto.logoPermission
+  async update(Id: number, updateAgentDto: UpdateAgentDto) {
+    const agent = await this.findOne(Id)
+    agent.AgentId =updateAgentDto.AgentId
+    agent.Name =updateAgentDto.Name
+    agent.Password =updateAgentDto.Password
+    agent.Phone =updateAgentDto.Phone
+    agent.JoinAt =updateAgentDto.JoinAt
+    agent.Status =updateAgentDto.Status
+    agent.IsActive=updateAgentDto.IsActive
+    agent.Company =updateAgentDto.Company
+    agent.CompanyImage =updateAgentDto.CompanyImage
+    agent.Companyadd =updateAgentDto.Companyadd
+    agent.Bonus=updateAgentDto.Bonus
+    agent.Credit=updateAgentDto.Credit
+    agent.Browser=updateAgentDto.Browser
+    agent.Area =updateAgentDto.Area
+    agent.Platform=updateAgentDto.Platform
+    agent.Markup=updateAgentDto.Markup
+    agent.LoginIp=updateAgentDto.LoginIp
+    agent.LogoPermission=updateAgentDto.LogoPermission
     const updateagent =this.agentrepository.save(agent)
     return updateagent;
   }
 
-  remove(id: number) {
-    const deleteagent = this.agentrepository.delete(id)
-    return `the userID ${id} is deleted succesfully`;
+  async remove(Id: number) {
+    const deleteagent = await this.agentrepository.delete(Id)
+    if(!deleteagent){
+      throw new HttpException( {status:`User ${Id} does not Exists`,}, HttpStatus.NOT_FOUND)
+    }
+    else
+    return deleteagent;
   }
 }

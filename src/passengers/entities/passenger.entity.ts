@@ -1,0 +1,48 @@
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+
+@Entity()
+export class Passengers {
+    @Column()
+    @PrimaryGeneratedColumn()
+    Id:number
+    @Column()
+    PaxId:string
+    @Column()
+    AgentId:String
+    @Column()
+    BookingId:string
+    @Column()
+    Pnr:String
+    @Column()
+    Prefix:string
+    @Column()
+    Fname:string
+    @Column()
+    Lname:String
+    @Column()
+    Dob:string
+    @Column()
+    Type:string
+    @Column()
+    PassNation:string
+    @Column()
+    PassNo:string
+    @Column()
+    PassEx:string
+    @Column()
+    Phone:string
+    @Column()
+    email:string
+    @Column()
+    Address:String
+    @Column()
+    Gender:string
+    @Column()
+    PassportCopy:string
+    @Column()
+    VisaCopy:string
+    @Column()
+    Created:string
+    @Column()
+    Uid:string
+}

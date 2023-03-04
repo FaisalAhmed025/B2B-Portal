@@ -1,4 +1,4 @@
-import { Injectable, Post } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAgentFailedDto } from './dto/create-agent_failed.dto';
@@ -9,31 +9,38 @@ import { AgentFailed } from './entities/agent_failed.entity';
 export class AgentFailedService {
   constructor(@InjectRepository(AgentFailed) private agentfailedRepo:Repository<AgentFailed>){}
   
-  create(createAgentFailedDto: CreateAgentFailedDto) {
-    const newagent = this.agentfailedRepo.create(createAgentFailedDto)
-    return this.agentfailedRepo.save(newagent);
+  async create(createAgentFailedDto: CreateAgentFailedDto) {
+    const newagent = await this.agentfailedRepo.create(createAgentFailedDto)
+    const agentFailed = this.agentfailedRepo.save(newagent);
+    return agentFailed;
   }
 
   
-  findAll() {
-    return this.agentfailedRepo.find({});
+  async findAll() {
+  const agentFailed= await this.agentfailedRepo.find({});
+  return agentFailed;
   }
 
-  findOne(id: number) {
-    return this.agentfailedRepo.findOneBy({id}) ;
+  async findOne(Id: number) {
+    const agentFailed= await this.agentfailedRepo.findOneBy({Id});
+    if(!agentFailed){
+      throw new HttpException(`User ${Id} does not Exists`, HttpStatus.NOT_FOUND)
+    }
+    else
+    return agentFailed;
   }
 
   async update(id: number, updateAgentFailedtDto: UpdateAgentFailedDto) {
 
     const agentfailed = await this.findOne(id)
 
-    agentfailed.name =updateAgentFailedtDto.name
-    agentfailed.password =updateAgentFailedtDto.password
-    agentfailed.phone =updateAgentFailedtDto.phone
-    agentfailed.joinAt=updateAgentFailedtDto.joinAt
-    agentfailed.status= updateAgentFailedtDto.status
-    agentfailed.company=updateAgentFailedtDto.company
-    agentfailed.companyadd =updateAgentFailedtDto.companyadd
+    agentfailed.Name =updateAgentFailedtDto.Name
+    agentfailed.Password =updateAgentFailedtDto.Password
+    agentfailed.Phone =updateAgentFailedtDto.Phone
+    agentfailed.JoinAt=updateAgentFailedtDto.JoinAt
+    agentfailed.Status= updateAgentFailedtDto.Status
+    agentfailed.Company=updateAgentFailedtDto.Company
+    agentfailed.CompanyAdd =updateAgentFailedtDto.CompanyAdd
 
     const newagent = await this.agentfailedRepo.save(agentfailed)
     return newagent;
@@ -41,7 +48,8 @@ export class AgentFailedService {
 
   }
 
-  remove(id: number) {
-    return this.agentfailedRepo.delete({id});
+ async remove(Id: number) {
+    const agentFailed= await this.agentfailedRepo.delete({Id});
+    return agentFailed;
   }
 }

@@ -1,0 +1,23 @@
+export class CreatePassengerDto {
+    Id:number
+    PaxId:string
+    AgentId:String
+    BookingId:string
+    Pnr:String
+    Prefix:string
+    Fname:string
+    Lname:String
+    Dob:string
+    Type:string
+    PassNation:string
+    PassNo:string
+    PassEx:string
+    Phone:string
+    email:string
+    Address:String
+    Gender:string
+    PassportCopy:string
+    VisaCopy:string
+    Created:string
+    Uid:string
+}
